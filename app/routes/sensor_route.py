@@ -21,6 +21,6 @@ async def receive_sensor_data(data: NodeMCUDataSchema):
 async def get_sensor_data(sensor_id: str):
     try:
         data = await SensorService.get_all_sensor_data(sensor_id)
-        return {"data": data}
+        return {"data": data}  # Should return a list of SensorDataModel instances
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
