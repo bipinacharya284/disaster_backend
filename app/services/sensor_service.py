@@ -41,5 +41,14 @@ class SensorService:
         collection_name = f"sensor{sensor_id}"
         sensor_data = await db[collection_name].find().to_list(100)
 
-        # Convert ObjectId to PyObjectId to avoid issues during serialization
-        return [SensorDataModel(**{**data, "id": data["_id"]}) for data in sensor_data]
+        # Create SensorDataModel instances while ensuring proper ObjectId handling
+        return [
+            SensorDataModel(
+                id=data["_id"],  # Directly assign _id to id
+                sensor_id=data["sensor_id"],
+                value=data["value"],
+                sent_at=data["sent_at"],
+                received_at=data["received_at"],
+            )
+            for data in sensor_data
+        ]
