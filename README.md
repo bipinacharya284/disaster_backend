@@ -30,5 +30,5 @@ This project is a backend service developed using [FastAPI](https://fastapi.tian
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/bipinacharya284/disaster_backend
+   cd disaster_backend
