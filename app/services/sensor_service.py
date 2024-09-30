@@ -39,7 +39,7 @@ class SensorService:
     @staticmethod
     async def get_all_sensor_data(sensor_id: str) -> List[SensorDataModel]:
         collection_name = f"sensor{sensor_id}"
-        sensor_data = await db[collection_name].find().to_list(100)
+        sensor_data = await db[collection_name].find().to_list()
 
         # Create SensorDataModel instances while ensuring proper ObjectId handling
         return [
