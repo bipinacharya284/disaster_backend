@@ -32,3 +32,19 @@ This project is a backend service developed using [FastAPI](https://fastapi.tian
    ```bash
    git clone https://github.com/bipinacharya284/disaster_backend
    cd disaster_backend
+   pip install -r requirements.txt
+   ```
+
+## Starting Server
+1. Using the script:
+   ```bash
+      python main.py
+   ```
+   **Note:** You should be in the project root directory
+
+2. Using the uvicorn command:
+   ```bash
+      uvicorn app.main:app --host 0.0.0.0 --port 8080
+   ```
+   
+
