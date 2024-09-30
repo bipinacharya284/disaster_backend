@@ -35,7 +35,9 @@ class NodeMCUDataModel(BaseModel):
     device_id: str
     sensor_data: List[SensorDataModel]
     sent_at: Optional[datetime] = None
-    received_at: Optional[datetime] =  Field(default_factory=datetime.now) # Optional to allow missing fields
+    received_at: Optional[datetime] = Field(
+        default_factory=datetime.now
+    )  # Optional to allow missing fields
 
     class Config:
         json_encoders = {PyObjectId: lambda v: str(v)}  # Serialize as string

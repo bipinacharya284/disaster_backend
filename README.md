@@ -44,7 +44,7 @@ This project is a backend service developed using [FastAPI](https://fastapi.tian
 
 2. Using the uvicorn command:
    ```bash
-      uvicorn app.main:app --host 0.0.0.0 --port 8080
+      uvicorn main:app --host 0.0.0.0 --port 8080
    ```
    
 
